@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import torch
-from torchvision.models.resnet import resnet50
+from torchvision.models.resnet import resnet50, wide_resnet50_2
 
 import vision_transformer as vits
 
@@ -93,6 +93,14 @@ def dino_resnet50(pretrained=True, **kwargs):
         )
         model.load_state_dict(state_dict, strict=False)
     return model
+
+# def dino_wideresnet50(pretrained=False, **kwargs):
+#     """
+#     WideResNet-50 pre-trained with DINO.
+#     """
+#     model = wide_resnet50_2(pretrained=False, **kwargs)
+#     model.fc = torch.nn.Identity()
+#     return model
 
 
 def dino_xcit_small_12_p16(pretrained=True, **kwargs):

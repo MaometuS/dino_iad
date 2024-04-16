@@ -21,7 +21,8 @@ import json
 from pathlib import Path
 
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 import torch
 import torch.nn as nn
 import torch.distributed as dist
