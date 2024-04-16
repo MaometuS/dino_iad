@@ -13,5 +13,5 @@
 source ~/anaconda3/etc/profile.d/conda.sh
 conda activate dino_iad
 export NCCL_DEBUG=INFO
-srun torchrun --nnodes=1 --nproc_per_node=4 main_dino.py --arch wide_resnet50_2 --optimizer sgd --lr 0.03 --weight_decay 1e-4 --weight_decay_end 1e-4 --global_crops_scale 0.14 1 --local_crops_scale 0.05 0.14 --data_path /po1/rakhimov/extracted --output_dir /po1/rakhimov/result --epochs 100
+srun torchrun --nnodes=1 --nproc_per_node=4 main_dino.py --arch wide_resnet50_2 --optimizer sgd --lr 0.03 --weight_decay 1e-4 --weight_decay_end 1e-4 --global_crops_scale 0.14 1 --local_crops_scale 0.05 0.14 --data_path /po1/rakhimov/extracted --output_dir /po1/rakhimov/result_wd50 --epochs 100
 conda deactivate
